@@ -15,12 +15,12 @@ DATA = {}
 async def download_file(client, message):
     media = message.reply_to_message
     if media.empty:
-        await message.reply_text('Why did you delete that?? 😕', True)
+        await message.reply_text('لماذا حذفت ذلك؟؟', True)
         return
 
     msg = await client.send_message(
         chat_id=message.chat.id,
-        text="**Downloading your file to server...**",
+        text="**جارٍ تنزيل الملف إلى الخادم...**",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton(text="Check Progress", callback_data="progress_msg")]
         ]),
@@ -34,19 +34,19 @@ async def download_file(client, message):
         message=media,
         progress=progress_func,
         progress_args=(
-            "**Downloading your file to server...**",
+            "**جارٍ تنزيل الملف إلى الخادم...**",
             msg,
             c_time
         )
     )
 
-    await msg.edit_text("Processing your file....")
+    await msg.edit_text("**تجهيز الملف الخاص بك....**")
 
     output = await execute(f"ffprobe -hide_banner -show_streams -print_format json '{download_location}'")
     
     if not output:
         await clean_up(download_location)
-        await msg.edit_text("Some Error Occured while Fetching Details...")
+        await msg.edit_text("حدث خطأ ما أثناء جلب التفاصيل...")
         return
 
     details = json.loads(output[0])
@@ -83,7 +83,7 @@ async def download_file(client, message):
     ])    
 
     await msg.edit_text(
-        "**Select the Stream to be Extracted...**",
+        "**حدد الصوت المراد استخراجه...**",
         reply_markup=InlineKeyboardMarkup(buttons)
         )
 
