@@ -22,15 +22,15 @@ async def confirm_dwnld(client, message):
 
     if filetype.mime_type.startswith("video/"):
         await message.reply_text(
-            "**What you want me to do??**",
+            "**ماذا تريد مني ان افعل??**",
             quote=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton(text="DOWNLOAD and PROCESS", callback_data="download_file")],
-                [InlineKeyboardButton(text="CANCEL", callback_data="close")]
+                [InlineKeyboardButton(text="تحميل ومعالجة", callback_data="download_file")],
+                [InlineKeyboardButton(text="الغاء", callback_data="close")]
             ])
         )
     else:
         await message.reply_text(
-            "Invalid Media",
+            "الوسائط غير صالحة",
             quote=True
         )
