@@ -17,7 +17,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 async def upload_audio(client, message, file_loc):
 
     msg = await message.edit_text(
-        text="**Uploading extracted stream...**",
+        text="**جارٍ تحميل البث المستخرج...**",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Progress", callback_data="progress_msg")]])
     )
@@ -42,20 +42,20 @@ async def upload_audio(client, message, file_loc):
             chat_id=message.chat.id,
             audio=file_loc,
             thumb=thumb,
-            caption="**@kashirbots**",
+            caption="**@H_M_Dr**",
             title=title,
             performer=artist,
             duration=duration,
             progress=progress_func,
             progress_args=(
-                "**Uploading extracted stream...**",
+                "**جارٍ تحميل البث المستخرج...**",
                 msg,
                 c_time
             )
         )
     except Exception as e:
         print(e)     
-        await msg.edit_text("**Some Error Occurred. See Logs for More Info.**")   
+        await msg.edit_text("**حدث بعض الخطأ. راجع المطور لمزيد من المعلومات.**")   
         return
 
     await msg.delete()
@@ -65,7 +65,7 @@ async def upload_audio(client, message, file_loc):
 async def upload_subtitle(client, message, file_loc):
 
     msg = await message.edit_text(
-        text="**Uploading extracted subtitle...**",
+        text="**جارٍ تحميل العنوان الفرعي المستخرج...**",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Progress", callback_data="progress_msg")]])
     )
@@ -76,17 +76,17 @@ async def upload_subtitle(client, message, file_loc):
         await client.send_document(
             chat_id=message.chat.id,
             document=file_loc,
-            caption="**@kashirbots**",
+            caption="**@H_M_Dr**",
             progress=progress_func,
             progress_args=(
-                "**Uploading extracted subtitle...**",
+                "**جارٍ تحميل العنوان الفرعي المستخرج...**",
                 msg,
                 c_time
             )
         )
     except Exception as e:
         print(e)     
-        await msg.edit_text("**Some Error Occurred. See Logs for More Info.**")   
+        await msg.edit_text("**حدث بعض الخطأ. راجع المطور لمزيد من المعلومات.**")   
         return
 
     await msg.delete()
