@@ -32,7 +32,7 @@ class Script(object):
 
 - <b>صنع وبرمجه :</b> @IIIlIIv    
 
-- <b>بأستخدام لغة :</b> <code>بايثون</code>
+- <b>بأستخدام لغة :</b> <code>Python 3</code>
 
 - <b>مكتبة :</b> <a href='https://docs.pyrogram.org/'>البيروجرام 1.0.7</a> 
 
