@@ -5,36 +5,35 @@
 
 class Script(object):
 
-    START_MSG = """<b>Hello {},
+    START_MSG = """<b>مرحبًا. {},
 
-I can extract audio and subtitles from video files.
+يمكنني استخراج الصوت والترجمة من ملفات الفيديو.
 
-Send me any video file and extract what you want :).
-
-See <i>help</i> for more details.
-
-© @kashirbots</b>"""
+أرسل لي أي ملف فيديو واستخرج ما تريد.
 
 
-    HELP_MSG = """<b>Hai, Follow these Steps..</b>
+© @IIIlIIv</b>"""
 
-🌀 <i>Send me any Valid video file.</i>
 
-🌀 <i>Click Download and Process button to download the file to my server</i>
+    HELP_MSG = """<b>ياخي اتبع الخطوات..</b>
+
+🌀 <i>أرسل لي أي ملف فيديو</i>
+
+🌀 <i>انقر فوق الزر "تنزيل ومعالجة" لتنزيل الملف على الخادم الخاص بي</i>
 
 🌀 <i>Wait till I process the video!</i>
 
-🌀 <i>Now select the stream you need to extract!</i>
+🌀 <i>الآن حدد الصوت الذي تريد استخراجه!</i>
 
-<b>© @kashirbots</b>"""
+<b>© @IIIlIIv</b>"""
 
 
-    ABOUT_MSG = """⭕️<b>My Name : Streams Extractor Bot</b>
+    ABOUT_MSG = """- <b>اسمي Jimmy</b>
 
-⭕️<b>Creater :</b> @kashirbots    
+- <b>صنع وبرمجه :</b> @IIIlIIv    
 
-⭕️<b>Language :</b> <code>Python3</code>
+- <b>بأستخدام لغة :</b> <code>بايثون</code>
 
-⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a> 
+- <b>مكتبة :</b> <a href='https://docs.pyrogram.org/'>البيروجرام 1.0.7</a> 
 
 """
