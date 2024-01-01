@@ -19,12 +19,12 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("HELP", callback_data="help_data"),
-                    InlineKeyboardButton("ABOUT", callback_data="about_data"),
+                    InlineKeyboardButton("‹ المساعده ›", callback_data="help_data"),
+                    InlineKeyboardButton("‹ عن البوت ›", callback_data="about_data"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/kashirbots")
+                        "‹ السورس ›", url="https://t.me/H_M_Dr")
                 ]
             ]
         ),
@@ -40,12 +40,12 @@ async def help(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("BACK", callback_data="start_data"),
-                    InlineKeyboardButton("ABOUT", callback_data="about_data"),
+                    InlineKeyboardButton("‹ خلف ›", callback_data="start_data"),
+                    InlineKeyboardButton("‹ عن البوت ›", callback_data="about_data"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "⭕️ SUPPORT ⭕️", url="https://t.me/mr_sahbe")
+                        "‹ السورس ›", url="https://t.me/H_M_Dr")
                 ]
             ]
         ),
@@ -61,12 +61,12 @@ async def about(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("BACK", callback_data="help_data"),
-                    InlineKeyboardButton("START", callback_data="start_data"),
+                    InlineKeyboardButton("‹ خلف ›", callback_data="help_data"),
+                    InlineKeyboardButton("‹ بدء البوت ›", callback_data="start_data"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "SOURCE CODE", url="https://github.com/github.com/kashir-bots/streamextractorbot")
+                        "‹ السورس ›", url="https://t.me/H_M_Dr")
                 ]
             ]
         ),
