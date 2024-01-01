@@ -22,9 +22,9 @@ async def cb_handler(client, query):
     if query.data == "start_data":
         await query.answer()
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("HELP", callback_data="help_data"),
-                InlineKeyboardButton("ABOUT", callback_data="about_data")],
-            [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/kashirbots")]
+            [InlineKeyboardButton("‹ المساعدة ›", callback_data="help_data"),
+                InlineKeyboardButton("‹ عن البوت ›", callback_data="about_data")],
+            [InlineKeyboardButton("‹ السورس ›", url="https://t.me/H_M_Dr")]
         ])
 
         await query.message.edit_text(
@@ -38,9 +38,9 @@ async def cb_handler(client, query):
     elif query.data == "help_data":
         await query.answer()
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("BACK", callback_data="start_data"),
-                InlineKeyboardButton("ABOUT", callback_data="about_data")],
-            [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/mr_sahbe")]
+            [InlineKeyboardButton("‹ خلف ›", callback_data="start_data"),
+                InlineKeyboardButton("‹ عن البوت ›", callback_data="about_data")],
+            [InlineKeyboardButton("‹ السورس ›", url="https://t.me/H_M_Dr")]
         ])
 
         await query.message.edit_text(
@@ -54,9 +54,9 @@ async def cb_handler(client, query):
     elif query.data == "about_data":
         await query.answer()
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("BACK", callback_data="help_data"),
-                InlineKeyboardButton("START", callback_data="start_data")],
-            [InlineKeyboardButton("SOURCE CODE", url="https://github.com/github.com/kashir-bots/streamextractorbot")]
+            [InlineKeyboardButton("‹ خلف ›", callback_data="help_data"),
+                InlineKeyboardButton("‹ بدء البوت ›", callback_data="start_data")],
+            [InlineKeyboardButton("‹ السورس ›", url="https://t.me/H_M_Dr")]
         ])
 
         await query.message.edit_text(
@@ -75,7 +75,7 @@ async def cb_handler(client, query):
 
     elif query.data == "progress_msg":
         try:
-            msg = "Progress Details...\n\nCompleted : {current}\nTotal Size : {total}\nSpeed : {speed}\nProgress : {progress:.2f}%\nETA: {eta}"
+            msg = "تفاصيل التقدم...\n\nمكتمل : {current}\nالحجم الإجمالي : {total}\nسرعة : {speed}\nتقدم : {progress:.2f}%\n و : {eta}"
             await query.answer(
                 msg.format(
                     **PRGRS[f"{query.message.chat.id}_{query.message.message_id}"]
@@ -84,49 +84,49 @@ async def cb_handler(client, query):
             )
         except:
             await query.answer(
-                "Processing your file...",
+                "جارٍ معالجة ملفك...",
                 show_alert=True
             )
 
 
-    elif query.data == "close": 
+    elif query.data == "الغاء": 
         await query.message.delete()  
         await query.answer(
-                "Cancelled...",
+                "ألغيت...",
                 show_alert=True
             ) 
 
 
-    elif query.data.startswith('audio'):
+    elif query.data.startswith('صوتي'):
         await query.answer()
         try:
             stream_type, mapping, keyword = query.data.split('_')
             data = DATA[keyword][int(mapping)]
             await extract_audio(client, query.message, data)
         except:
-            await query.message.edit_text("**Details Not Found**")   
+            await query.message.edit_text("**التفاصيل غير موجودة**")   
 
 
-    elif query.data.startswith('subtitle'):
+    elif query.data.startswith('العنوان الفرعي'):
         await query.answer()
         try:
             stream_type, mapping, keyword = query.data.split('_')
             data = DATA[keyword][int(mapping)]
             await extract_subtitle(client, query.message, data)
         except:
-            await query.message.edit_text("**Details Not Found**")  
+            await query.message.edit_text("**التفاصيل غير موجودة**")  
 
 
-    elif query.data.startswith('cancel'):
+    elif query.data.startswith('الغاء'):
         try:
             query_type, mapping, keyword = query.data.split('_')
             data = DATA[keyword][int(mapping)] 
-            await clean_up(data['location'])  
-            await query.message.edit_text("**Cancelled...**")
+            await clean_up(data['موقع'])  
+            await query.message.edit_text("**ألغيت...**")
             await query.answer(
                 "Cancelled...",
                 show_alert=True
             ) 
         except:
             await query.answer() 
-            await query.message.edit_text("**Details Not Found**")        
+            await query.message.edit_text("**التفاصيل غير موجودة**")        
